@@ -1,0 +1,9 @@
+body{
+   
+    text-align: center;
+    background: -webkit-linear-gradient(right, #a7c4f2, #d0b8e3);
+}
+
+.user-list:nth-child(1){
+    background-color: -webkit-linear-gradient(right, #34ebab, #2d7d61);;
+}

@@ -1,0 +1,13 @@
+body{
+    text-align: center;
+    background: -webkit-linear-gradient(right, #a7c4f2, #d0b8e3);
+}
+
+section{
+    margin-top: 7em;
+    
+}
+
+section button{
+    margin:10px;
+}
