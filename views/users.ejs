@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/style2.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users">User Infos</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex" method="POST" action="/users/details">
+                    <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="name">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <h1 class="display-1">
+        User Infos
+    </h1>
+
+    <% if(user){ %>
+        <ul class="user-list">
+            <% for( us of user){ %>
+                <li><a href="/users/details/<%= us.email %> ">
+                        Name - <%= us.name %>
+                    </a>
+                    <br>
+                    Age - <%= us.age %>
+                        <br>
+                        Address - <%= us.address %>
+                            <br>
+                            Phone - <%= us.phone %>
+                                <br>
+                                Email - <%= us.email %>
+                                    <br>
+                </li>
+                <% } %>
+        </ul>
+        <% } %>
+</body>
+
+</html>
