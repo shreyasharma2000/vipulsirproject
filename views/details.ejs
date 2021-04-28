@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- 
+    <link rel="stylesheet" href="css/style.css">' -->
+    <style>
+        body {
+            text-align: center;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users">User Infos</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex" method="POST" action="/users/details">
+                    <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="name">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+
+        <h1 class="display-1">Edit Portal</h1>
+
+        <form action="/users/<%= user.email %> " method="POST">
+
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">name</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-lg" name="name" value=<%=user.name %>>
+            </div>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">age</span>
+                <input type="number" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-lg" name="age" value=<%=user.age %>>
+            </div>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">email</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-lg" name="email" value=<%=user.email %>>
+            </div>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">address</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-lg" name="address" value=<%=user.address %>>
+            </div>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">phone</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-lg" name="phone" value=<%=user.phone %>>
+            </div>
+
+            <button class="btn btn-outline-success" type="submit" name="action" value='edit'>
+                Confirm
+            </button>
+
+            <button name="action" class="btn btn-outline-danger" value="delete">delete</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
